@@ -1,0 +1,72 @@
+:root{
+    --primary-color: #1d5888;
+    --secondary-color: #ff993b;
+    --dark-color: #292929;
+    --white-color: #e7e7e7;
+}
+body{
+    color:var(--dark-color)
+}
+
+nav{
+    background-color: var(--dark-color);
+}
+
+footer{
+    background-color: var(--dark-color);
+}
+
+h1,h2,h3,h4,h5,h6{
+    color: var(--primary-color);
+}
+
+footer {
+    padding: 1rem;
+}
+
+footer .social>a {
+    color: var(--white-color);
+    opacity: 0.75;
+}
+
+footer .social>a:hover{
+    color: var(--primary-color);
+    opacity: 0.9;
+}
+main>.container {
+    padding: 60px 15px 0;
+    margin-bottom: 5rem;
+}
+
+.sticky-nav {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.bsicon{
+    color: rgba(151, 19, 151, 0.952);
+}
+
+.jsicon{
+    color: rgb(236, 221, 13);
+}
+
+.htmlicon{
+    color: rgb(221, 70, 15);
+}
+
+.cssicon{
+    color: rgb(53, 53, 180);
+}
+.checklist >li i{
+    color: var(--secondary-color);
+}
+
+code[class*="language-"],
+        pre[class*="language-"] {
+            white-space: pre-wrap;
+            word-break: break-all;
+            word-wrap: break-word;
+            }
