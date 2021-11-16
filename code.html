@@ -56,11 +56,70 @@
     <div class="container py-5 px-5 mt-5">
         <h2 class="border-1 border-bottom border-dark">The Code for HUNDU.</h2>
         <div class="row row-cols-1 row-cols-lg-2">
-            <div class="col-lg-8">
+            <div class="col-12 col-lg-8">
                 <pre class="line-numbers"><code class="language-javascript">
-                    // Call Hello World
-                    function HelloWorld() {
-                        alert("hello World");
+                    // get the values from the page
+                    // starts or controller function
+                    function getValues() {
+                        // get values from the page
+                        let startValue = document.getElementById("startValue").value;
+                        let endValue = document.getElementById("endValue").value;
+                    // we need to validate our input for integers we need to perse it and check it 
+                        //parse into integers
+                        startValue = parseInt(startValue);
+                        endValue = parseInt(endValue);
+                    
+                        if (Number.isInteger(startValue) && Number.isInteger(endValue)) {
+                            // we call generateNumbers
+                            let numbers = generateNumbers(startValue, endValue);
+                            // we call displayNumbers
+                            displayNumbers(numbers);
+                    
+                        } else {
+                            alert("You must enter integers");
+                        }
+                      
+                    }
+                    
+                    // generate numbers from startValue to the endValue
+                    // logic function(s)
+                    function generateNumbers(sValue, eValue){
+                    
+                        let numbers = [];
+                    
+                        // We want to get all numbers from to start to end
+                        for (let index = sValue; index < eValue; index++) {
+                            // this will execute in a loop un till index = eValue
+                            numbers.push(index);
+                        }
+                    
+                        return numbers;
+                    }
+                    
+                    // display the numbers and mark even numbers bold
+                    // display or view functions
+                    function displayNumbers(numbers) {
+                    
+                        let templateRows = "";
+                        for (let index = 0; index < numbers.length; index++) {
+                            
+                            let className = "even";
+                    
+                            let number = numbers[index];
+                    
+                            if(number % 2 == 0){
+                                className = "even";
+                            }
+                            else {
+                                className = "odd";
+                            }
+                            //This dose not  render correctly with Prisim the source
+                            templateRows += `<tr><td class="${className}" >${number}</td></tr>`;
+                    
+                        }
+                    
+                        document.getElementById("results").innerHTML = templateRows
+                    
                     }
                 </code>
                 </pre>

@@ -68,7 +68,7 @@
                     <h5>Enter Values</h5>
                     <form class="row gy-2 gx-3">
                         <div class="col">
-                            <input id="startValue" type="number" class="form-control" placeholder="Start Value" 
+                            <input id="startValue" type="number" class="form-control" placeholder="Start value" 
                             value=0 aria-label="Start Value">
                         </div>
                         <div class="col">
@@ -118,9 +118,9 @@
 integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous">
 </script>
 <script src="https://kit.fontawesome.com/5db21ba9c6.js" crossorigin="anonymous"></script>
-<script src="/js/site.js"></script>
+<script src="js/site.js"></script>
 <script>
-    document.getElementById("btnSubmit")
+    document.getElementById("btnSubmit").addEventListener("click",getValues);
 </script>
 </body>
 
