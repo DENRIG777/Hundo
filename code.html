@@ -57,77 +57,85 @@
         <h2 class="border-1 border-bottom border-dark">The Code for HUNDU.</h2>
         <div class="row row-cols-1 row-cols-lg-2">
             <div class="col-12 col-lg-8">
-                <pre class="line-numbers"><code class="language-javascript">
-                    // get the values from the page
-                    // starts or controller function
-                    function getValues() {
-                        // get values from the page
-                        let startValue = document.getElementById("startValue").value;
-                        let endValue = document.getElementById("endValue").value;
-                    // we need to validate our input for integers we need to perse it and check it 
-                        //parse into integers
-                        startValue = parseInt(startValue);
-                        endValue = parseInt(endValue);
-                    
-                        if (Number.isInteger(startValue) && Number.isInteger(endValue)) {
-                            // we call generateNumbers
-                            let numbers = generateNumbers(startValue, endValue);
-                            // we call displayNumbers
-                            displayNumbers(numbers);
-                    
-                        } else {
-                            alert("You must enter integers");
-                        }
-                      
-                    }
-                    
-                    // generate numbers from startValue to the endValue
-                    // logic function(s)
-                    function generateNumbers(sValue, eValue){
-                    
-                        let numbers = [];
-                    
-                        // We want to get all numbers from to start to end
-                        for (let index = sValue; index < eValue; index++) {
-                            // this will execute in a loop un till index = eValue
-                            numbers.push(index);
-                        }
-                    
-                        return numbers;
-                    }
-                    
-                    // display the numbers and mark even numbers bold
-                    // display or view functions
-                    function displayNumbers(numbers) {
-                    
-                        let templateRows = "";
-                        for (let index = 0; index < numbers.length; index++) {
-                            
-                            let className = "even";
-                    
-                            let number = numbers[index];
-                    
-                            if(number % 2 == 0){
-                                className = "even";
-                            }
-                            else {
-                                className = "odd";
-                            }
-                            //This dose not  render correctly with Prisim the source
-                            templateRows += `<tr><td class="${className}" >${number}</td></tr>`;
-                    
-                        }
-                    
-                        document.getElementById("results").innerHTML = templateRows
-                    
-                    }
-                </code>
-                </pre>
+ <pre class="line-numbers"><code class="language-javascript">
+    // get the values from the page
+    // starts or controller function
+    function getValues() {
+        // get values from the page
+        let startValue = document.getElementById("startValue").value;
+        let endValue = document.getElementById("endValue").value;
+    // we need to validate our input for integers we need to perse it and check it 
+        //parse into integers
+        startValue = parseInt(startValue);
+        endValue = parseInt(endValue);
+    
+        if (Number.isInteger(startValue) && Number.isInteger(endValue)) {
+            // we call generateNumbers
+            let numbers = generateNumbers(startValue, endValue);
+            // we call displayNumbers
+            displayNumbers(numbers);
+    
+        } else {
+            alert("You must enter integers");
+        }
+      
+    }
+    
+    // generate numbers from startValue to the endValue
+    // logic function(s)
+    function generateNumbers(sValue, eValue){
+    
+        let numbers = [];
+    
+        // We want to get all numbers from to start to end
+        for (let index = sValue; index < eValue; index++) {
+            // this will execute in a loop un till index = eValue
+            numbers.push(index);
+        }
+    
+        return numbers;
+    }
+    
+    // display the numbers and mark even numbers bold
+    // display or view functions
+    function displayNumbers(numbers) {
+    
+        let templateRows = "";
+        for (let index = 0; index < numbers.length; index++) {
+            
+            let className = "even";
+    
+            let number = numbers[index];
+    
+            if(number % 2 == 0){
+                className = "even";
+            }
+            else {
+                className = "odd";
+            }
+    
+            templateRows += `<tr><td class="${className}" >${number}</td></tr>`;
+    
+        }
+    
+        document.getElementById("results").innerHTML = templateRows
+    
+    }
+</code>
+ </pre>
             </div>
             <div class="col-lg-4">
-                <P>The code is structed in one function. </P>
-                <h5>Hello world</h5>
-                <p>Hello World is a function that displays an alert with a message of "Hello World",</p>
+                <P>The code is structed in three functions. </P>
+                <h5>function getValues</h5>
+                <p>getValus is a function with in the function the start and end values from the Html page 
+                    where called with getElementById and then the values were parse into integers to insure strings 
+                    were not being passed through and then an if else statement validated that integers were 
+                    not through also with an alert stating that integers must be entered.</p>
+                <h5>function generatenumbers</h5>
+                <p>generateNumbers was declared in the last function in order to pass in the values in order to 
+                    store them in a for loop to add one to the sValue till it equals the eValue
+
+                </p>
             </div>
         </div>
     </div>
